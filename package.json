@@ -1,7 +1,7 @@
 {
   "name": "tell-me-when-they-are-angry",
   "version": "1.0.0",
-  "description": "Lambda for sending notification on negative mentions on twitter",
+  "description": "Lambda for sending notification for negative mentions on twitter",
   "main": "index.js",
   "keywords": ["sentiment analysis", "twitter", "twitter mentions"],
   "author": "Lex Ned",
