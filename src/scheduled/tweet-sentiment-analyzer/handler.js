@@ -13,8 +13,8 @@ async function handle() {
         .filter(sentimentAnalyzer.isNegativeSentiment);
 
     if (angryMentions.length > 0) {
-        await notificationPublisher.publishTheyAreAngryEvent(angryMentions)
-        const lastMention = angryMentions.pop();
+        await notificationPublisher.publishTheyAreAngryEvent(angryMentions);
+        const lastMention = angryMentions[angryMentions.length - 1];
         await mentionsRepository.saveLastProcessedMentionId(lastMention.id);
     }
 }

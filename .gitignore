@@ -2,3 +2,4 @@
 sam.*
 .idea
 node_modules
+coverage
