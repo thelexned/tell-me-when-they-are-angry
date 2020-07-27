@@ -1,4 +1,9 @@
 {
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-with-coverage": "jest --coverage"
+  },
   "dependencies": {
     "@architect/functions": "^3.12.1",
     "aws-sdk": "^2.715.0",
@@ -6,5 +11,7 @@
     "twitter-mentions": "^3.0.0",
     "twitter-tokens": "^1.0.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
 }
