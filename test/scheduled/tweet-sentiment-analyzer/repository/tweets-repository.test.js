@@ -1,5 +1,5 @@
 const twitterMentions = require('twitter-mentions');
-const tweetsRepository = require("./tweets-repository");
+const tweetsRepository = require("../../../../src/scheduled/tweet-sentiment-analyzer/repository/tweets-repository");
 jest.mock('twitter-mentions');
 
 describe("TweetsRepository", () => {
