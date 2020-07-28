@@ -1,4 +1,4 @@
-const tweetsMapper = require("./tweets-mapper");
+const tweetsMapper = require("../../../../src/scheduled/tweet-sentiment-analyzer/mapper/tweets-mapper");
 
 describe("TweetsMapper", () => {
     describe("#simplifyTweet", () => {

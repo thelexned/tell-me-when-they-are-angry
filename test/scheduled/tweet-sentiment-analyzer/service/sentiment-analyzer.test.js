@@ -1,4 +1,4 @@
-const sentimentAnalyzer = require("./sentiment-analyzer");
+const sentimentAnalyzer = require("../../../../src/scheduled/tweet-sentiment-analyzer/service/sentiment-analyzer");
 
 describe("SentimentAnalyzer", () => {
     describe("#enrichWithSentiment", () => {

@@ -1,4 +1,4 @@
-const mentionsRepository = require("./mentions-repository");
+const mentionsRepository = require("../../../../src/scheduled/tweet-sentiment-analyzer/repository/mentions-repository");
 const arc = require('@architect/functions');
 
 describe("MentionsRepository", () => {

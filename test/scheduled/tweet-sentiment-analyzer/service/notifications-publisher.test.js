@@ -1,4 +1,4 @@
-const notificationsPublisher = require('./notifications-publisher');
+const notificationsPublisher = require('../../../../src/scheduled/tweet-sentiment-analyzer/service/notifications-publisher');
 const arc = require('@architect/functions');
 
 describe("NotificationPublisher", () => {

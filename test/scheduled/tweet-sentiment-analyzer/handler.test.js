@@ -1,7 +1,7 @@
-const mentionsRepository = require("./repository/mentions-repository");
-const tweetsRepository = require("./repository/tweets-repository");
-const notificationsPublisher = require("./service/notifications-publisher");
-const handler = require('./handler');
+const mentionsRepository = require("../../../src/scheduled/tweet-sentiment-analyzer/repository/mentions-repository");
+const tweetsRepository = require("../../../src/scheduled/tweet-sentiment-analyzer/repository/tweets-repository");
+const notificationsPublisher = require("../../../src/scheduled/tweet-sentiment-analyzer/service/notifications-publisher");
+const handler = require('../../../src/scheduled/tweet-sentiment-analyzer/handler');
 
 describe('Handler', () => {
     describe('#handle', () => {
