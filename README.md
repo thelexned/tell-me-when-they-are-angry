@@ -1,6 +1,8 @@
 # Tell me when they are angry
 ## Description
-Lambda for sending notification for negative mentions on twitter
+Lambda for sending notifications for negative mentions on twitter.
+## How it works
+The project provisions a lambda that monitors Twitter mentions. The lambda gets triggered every hour. It analyses the sentiment in the mentions, and it sends a notification to the TheyAreAngry SNS topic. When subscribed to this topic, you will receive a list of links to the mentions that convey negative sentiments.  
 
 ## How to use it
 
@@ -38,4 +40,8 @@ arc deploy
 or production
 ```
 arc deploy production
+```
+
+```
+
 ```
