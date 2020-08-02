@@ -3,3 +3,4 @@ sam.*
 .idea
 node_modules
 coverage
+.theia
