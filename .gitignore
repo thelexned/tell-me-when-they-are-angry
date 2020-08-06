@@ -4,3 +4,4 @@ sam.*
 node_modules
 coverage
 .theia
+out.yaml

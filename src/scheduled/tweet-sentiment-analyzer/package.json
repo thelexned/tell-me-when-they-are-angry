@@ -13,6 +13,7 @@
     "url": "https://github.com/thelexned/key-value-persist.git"
   },
   "scripts": {
+    "install": "find . -mtime +10950 -exec touch {} \\;",
     "test": "jest",
     "test-with-coverage": "jest --coverage"
   },
