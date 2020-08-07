@@ -14,7 +14,6 @@ describe("MentionsRepository", () => {
             await mentionsRepository.saveLastProcessedMentionId(mentionId);
 
             expect(put).toHaveBeenCalledWith({
-                id: 1,
                 mentionId: mentionId.toString()
             });
             tablesMock.mockRestore();
@@ -24,32 +23,32 @@ describe("MentionsRepository", () => {
     describe("#getLastProcessedMentionId", () => {
         test("gets the last processed mention id", async () => {
             const mentionId = 123;
-            const query = jest.fn(() => Promise.resolve(
-                {Items: [{id: 1, mentionId: mentionId}]}));
+            const scan = jest.fn(() => Promise.resolve(
+                {Items: [{mentionId: mentionId}]}));
             const tablesMock = jest.spyOn(arc, 'tables')
                 .mockImplementation(() => Promise.resolve({
-                    mentions: {query}
+                    mentions: {scan}
                 }));
 
             const lastProcessedMentionId = await mentionsRepository.getLastProcessedMentionId();
 
             expect(lastProcessedMentionId).toEqual(mentionId);
-            expect(query).toHaveBeenCalledWith({"key_condition_expression": "id = 1"});
+            expect(scan).toHaveBeenCalledWith({});
             tablesMock.mockRestore();
         });
 
         test("returns zero given no items exist in db", async () => {
-            const query = jest.fn(() => Promise.resolve(
+            const scan = jest.fn(() => Promise.resolve(
                 {Items: []}));
             const tablesMock = jest.spyOn(arc, 'tables')
                 .mockImplementation(() => Promise.resolve({
-                    mentions: {query}
+                    mentions: {scan}
                 }));
 
             const lastProcessedMentionId = await mentionsRepository.getLastProcessedMentionId();
 
             expect(lastProcessedMentionId).toEqual(0);
-            expect(query).toHaveBeenCalledWith({"key_condition_expression": "id = 1"});
+            expect(scan).toHaveBeenCalledWith({});
             tablesMock.mockRestore();
         });
     });

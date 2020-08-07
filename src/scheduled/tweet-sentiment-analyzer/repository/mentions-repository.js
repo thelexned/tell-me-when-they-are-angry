@@ -1,11 +1,8 @@
 const arc = require('@architect/functions')
 
-const LAST_PROCESSED_MENTION_ID = 1;
-
 async function getLastProcessedMentionId() {
-    const tables = await arc.tables()
-    const mentionsInTable = await tables.mentions.query({key_condition_expression: `id = ${LAST_PROCESSED_MENTION_ID}`});
-
+    const tables = await arc.tables();
+    const mentionsInTable = await tables.mentions.scan({});
     if (mentionsInTable.Items && mentionsInTable.Items.length > 0) {
         return parseInt(mentionsInTable.Items[mentionsInTable.Items.length - 1].mentionId);
     }
@@ -16,7 +13,6 @@ async function getLastProcessedMentionId() {
 async function saveLastProcessedMentionId(lastMentionId) {
     const tables = await arc.tables();
     tables.mentions.put({
-        id: LAST_PROCESSED_MENTION_ID,
         mentionId: lastMentionId.toString()
     });
 }
