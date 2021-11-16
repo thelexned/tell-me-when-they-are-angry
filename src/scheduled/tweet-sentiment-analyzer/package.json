@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@architect/functions": "^3.12.1",
-    "aws-sdk": "^2.715.0",
+    "aws-sdk": "^2.814.0",
     "sentiment": "^5.0.2",
     "twitter-mentions": "^3.0.0",
     "twitter-tokens": "^1.0.3"
